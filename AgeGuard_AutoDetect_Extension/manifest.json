@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "AgeGuard",
+  "version": "1.0",
+  "description": "Blocks access for underage users using webcam-based age detection.",
+  "permissions": ["storage", "tabs", "activeTab", "scripting"],
+  "host_permissions": ["<all_urls>"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "models/age_gender_model/age_gender_model-weights_manifest.json",
+        "models/age_gender_model/age_gender_model-shard1",
+        "models/tiny_face_detector_model/tiny_face_detector_model-weights_manifest.json",
+        "models/tiny_face_detector_model/tiny_face_detector_model-shard1"
+      ],
+      "matches": ["<all_urls>", "chrome-extension://*/*"]
+    }
+  ]
+}
