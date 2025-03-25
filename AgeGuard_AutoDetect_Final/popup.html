@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AgeGuard</title>
+  <script defer src="libs/face-api.min.js"></script>
+  <script defer src="popup.js"></script>
+  <style>
+    body { 
+      font-family: Arial, sans-serif; 
+      text-align: center; 
+      padding: 20px; 
+      width: 300px; 
+      margin: 0 auto;
+      background-color: #f8f9fa;
+    }
+
+    h2 { 
+      margin-bottom: 20px; 
+      color: #333;
+    }
+
+    button {
+      padding: 12px 20px;
+      font-size: 16px;
+      margin: 10px 0;
+      cursor: pointer;
+      border: none;
+      border-radius: 8px;
+      width: 80%;
+      background-color: #007bff;
+      color: white;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    #status {
+      margin-top: 20px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    video {
+      width: 100%;
+      margin-top: 10px;
+      display: none;
+      border-radius: 8px;
+    }
+
+    input[type="password"] {
+      padding: 10px;
+      font-size: 16px;
+      width: 80%;
+      margin-bottom: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    #changePwdSection { 
+      display: none; 
+      margin-top: 20px;
+    }
+
+    #changePwdMsg {
+      font-size: 14px;
+      margin-top: 10px;
+    }
+
+    #changePwdBtnToggle {
+      width: 80%;
+      background-color: #28a745;
+    }
+
+    #changePwdBtnToggle:hover {
+      background-color: #218838;
+    }
+
+    .button-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Status for Detection */
+    #detection-status {
+      margin-top: 20px;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .status-child {
+      color: red;
+    }
+
+    .status-adult {
+      color: green;
+    }
+
+    .status-none {
+      color: orange;
+    }
+
+  </style>
+</head>
+<body>
+
+  <h2>AgeGuard</h2>
+  <p>Start detection once. We'll auto-block pages later.</p>
+  
+  <!-- Container for buttons -->
+  <div class="button-container">
+    <button id="start-detection">Start Detection</button>
+    <button id="reset">Reset Detection</button>
+    <button id="changePwdBtnToggle">Change Password</button>
+  </div>
+
+  <!-- Video feed for detection -->
+  <video id="video" autoplay></video>
+  
+  <!-- Status text -->
+  <p id="status"></p>
+
+  <!-- Detection Status -->
+  <p id="detection-status" class="status-none">🕵️ No Detection Done Yet.</p>
+
+  <!-- Hidden Change Password Section -->
+  <div id="changePwdSection">
+    <h3>Change Password</h3>
+    <input type="password" id="oldPwd" placeholder="Enter Old Password" />
+    <input type="password" id="newPwd" placeholder="Enter New Password" />
+    <button id="changePwdBtn">Change Password</button>
+    <p id="changePwdMsg"></p>
+  </div>
+
+</body>
+</html>
