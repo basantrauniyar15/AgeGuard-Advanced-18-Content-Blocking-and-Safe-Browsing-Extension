@@ -1,4 +1,4 @@
-🔞# **AgeGuard - AI-Powered 18+ Content Blocking Extension**  
+## 🔞**AgeGuard - AI-Powered 18+ Content Blocking Extension**  
 
 🚀 **AgeGuard** is a smart **Chrome extension** designed to protect users, especially children, from accessing **adult content, explicit websites, and NSFW material**. It ensures a **safe browsing experience** by automatically blocking **inappropriate sites** and filtering explicit content based on domain names, keywords, and page content.  
 
