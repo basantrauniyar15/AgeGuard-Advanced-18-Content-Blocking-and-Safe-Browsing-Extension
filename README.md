@@ -32,7 +32,7 @@
 
 1. **Download or clone** this repository:  
    ```sh
-   git clone https://github.com/yourusername/AgeGuard-Advanced-Web-Filtering-System.git
+   git clone https://github.com/basantrauniyar15/AgeGuard-Advanced-Web-Filtering-System.git
    ```  
 2. Open **Google Chrome** and navigate to:  
    ```
